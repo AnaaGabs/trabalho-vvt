@@ -15,7 +15,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="nav-group-edital"]').click(); //Clica na aba Editais
     cy.get('[data-cy="nav-item-publicar-edital"]').click(); //Clica na opção Editais para acessar da página de Editais
     cy.get('[data-cy="add-publicar-edital"]').click(); //Clica no botão "Adicionar" para criação de um novo Edital
-    cy.get('[data-cy="nome"]').type(
+    cy.get('[data-cy="nome"]').realType(
       'Grupo-11 E.M. 005/2025 ana-barbosa', //Edite essa linha para preencher o nome do Edital
       { delay: 0 },
     ); //Preenche o campo "Nome" do Edital
@@ -23,14 +23,15 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="definirDuracaoProjetoEmMeses"]').check(); //Marca a opção "Definir Duração do Projeto em Meses"
     cy.get('[data-cy="duracaoProjetoEmMeses"]').type('6'); //Preenche o campo "Duração do Projeto em Meses com o valor 6"
     cy.get('[data-cy="termo-de-aceite"]').click(); //Clica na aba de Termo de Aceite
-    cy.get('[data-cy="termoDeAceite"]').type(
-      'Termo de Aceite do Edital Médio', //Preenche o campo "Termo de Aceite" com um texto padrão
-    ); //Preenche o campo "Termo de Aceite" do Edital
-    cy.get('data.cy=texto-do-edital').click(); //Clica na aba Texto do Edital para seguir para a página de Texto do Edital
-    cy.get('[data-cy="texto"]').type('Texto do Edital Médio', { delay: 0 }); //Preenche o campo "Texto" do Edital com um texto padrão
-    cy.get('data-cy="abrangencia"').click(); //Clica na aba Abrangência para seguir para a página de Abrangência
-    cy.get('data.cy="estado-sao-paulo"').click(); //Clica no estado de São Paulo na lista de estados
-    cy.get('data.cy="estado-parana"').click(); //Clica no estado de São Paulo na lista de estados
+    cy.get('.ck-editor__editable', { timeout: 5000 }).should('be.visible'); // Espera o editor carregar
+    cy.get('.ck-editor__editable').realType('Texto do termo de aceite', { delay: 0 }); //Preenche o campo "Termo de Aceite" com um texto padrão
+
+    cy.get('[data-cy=texto-do-edital]').click(); //Clica na aba Texto do Edital para seguir para a página de Texto do Edital
+    cy.get('.ck-editor__editable', { timeout: 5000 }).should('be.visible'); // Espera o editor carregar
+    cy.get('.ck-editor__editable').realType('Texto do edital medio', { delay: 0 }); //Preenche o campo "Termo de Aceite" com um texto padrão
+    cy.get('[data-cy="abrangencia"]').click(); //Clica na aba Abrangência para seguir para a página de Abrangência
+    cy.get('[data-cy="estado-sao-paulo"]').click(); //Clica no estado de São Paulo na lista de estados
+    cy.get('[data-cy="estado-parana"]').click(); //Clica no estado de São Paulo na lista de estados
     cy.get('[data-cy="cronograma"]').click(); //Clica na aba Cronograma para seguir para a página de Cronograma
     cy.get('[data-cy="periodo-de-submissao"]').click(); //Clica na aba Período de Submissão para seguir para a página de Período de Submissão
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para criar um novo Período de Submissão
