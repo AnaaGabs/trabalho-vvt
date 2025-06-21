@@ -60,6 +60,16 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
         .contains('Streich, Torp and Bergnaum') // Encontra o item que contém o texto
         .click(); // Clica nele
+
+    cy.get('[data-cy="naturezaDespesaEditalUnsaved.naturezaDespesaId"]').click(); //clica no campo de seleção de Natureza de Despesa
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+        .contains('Custeio') // Encontra o item que contém o texto
+        .click(); // Clica nele
+    cy.get('[data-cy="naturezaDespesaEditalUnsaved.valor"]').type(
+        '10', //Preenche o campo "Valor" com um valor padrão
+        { delay: 0 },
+    ); //Preenche o campo "Valor" da Natureza de Despesa
+    
     cy.get('[data-cy="naturezaDespesaEdital-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações do Programa
     cy.get('[data-cy="rubricas"]').click(); //Clica na aba Rubricas para seguir para a página de Rubricas
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Rubrica
