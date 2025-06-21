@@ -113,35 +113,70 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
         .click(); // Clica nele
     cy.get('[data-cy="editalRubrica-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações da Rubrica
     cy.get('[data-cy="faixas-de-financiamento"]').click(); //Clica na aba Faixas de Financiamento para seguir para a página de Faixas de Financiamento
+    
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Faixa de Financiamento
     cy.get('[data-cy="faixaFinanciamentoUnsaved.nome"]').type(
-        'Faixa de Financiamento 1', //Preenche o campo "Faixa de Financiamento" com um texto padrão
+        'Faixa A', //Preenche o campo "Faixa de Financiamento" com um texto padrão
         { delay: 0 },
     ); //Preenche o campo "Faixa de Financiamento" da Faixa de Financiamento
+    cy.get('[data-cy="faixaFinanciamentoUnsaved.valorMinimo"]').click(); //Clica no campo "Valor Mínimo" para preenchê-lo
+    cy.get('[data-cy="faixaFinanciamentoUnsaved.valorMinimo"]').type(
+        '100,00', //Preenche o campo "Valor Mínimo" com um valor padrão
+        { delay: 0 },
+    ); //Preenche o campo "Valor Mínimo" da Faixa de Financiamento
+    cy.get('[data-cy="faixaFinanciamentoUnsaved.valorMaximo"]').click(); //Clica no campo "Valor Máximo" para preenchê-lo
+    cy.get('[data-cy="faixaFinanciamentoUnsaved.valorMaximo"]').type(
+        '500,00', //Preenche o campo "Valor Máximo" com um valor padrão
+        { delay: 0 },
+    ); //Preenche o campo "Valor Máximo" da Faixa de Financiamento
     cy.get('[data-cy="faixaFinanciamento-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações da Faixa de Financiamento
+    
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Faixa de Financiamento
     cy.get('[data-cy="faixaFinanciamentoUnsaved.nome"]').type(
-        'Faixa de Financiamento 2', //Preenche o campo "Faixa de Financiamento" com um texto padrão
+        'Faixa B', //Preenche o campo "Faixa de Financiamento" com um texto padrão
         { delay: 0 },
     ); //Preenche o campo "Faixa de Financiamento" da Faixa de Financiamento
+    cy.get('[data-cy="faixaFinanciamentoUnsaved.valorMaximo"]').click(); //Clica no campo "Valor Máximo" para preenchê-lo
+    cy.get('[data-cy="faixaFinanciamentoUnsaved.valorMaximo"]').type(
+        '1000,00', //Preenche o campo "Valor Máximo" com um valor padrão
+        { delay: 0 },
+    ); //Preenche o campo "Valor Máximo" da Faixa de Financiamento
     cy.get('[data-cy="faixaFinanciamento-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações da Faixa de Financiamento
+    
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Faixa de Financiamento
     cy.get('[data-cy="faixaFinanciamentoUnsaved.nome"]').type(
-        'Faixa de Financiamento 3', //Preenche o campo "Faixa de Financiamento" com um texto padrão
+        'Faixa C', //Preenche o campo "Faixa de Financiamento" com um texto padrão
         { delay: 0 },
     ); //Preenche o campo "Faixa de Financiamento" da Faixa de Financiamento
+    cy.get('[data-cy="faixaFinanciamentoUnsaved.valorMaximo"]').click(); //Clica no campo "Valor Máximo" para preenchê-lo
+    cy.get('[data-cy="faixaFinanciamentoUnsaved.valorMaximo"]').type(
+        '1500,00', //Preenche o campo "Valor Máximo" com um valor padrão
+        { delay: 0 },
+    ); //Preenche o campo "Valor Máximo" da Faixa de Financiamento
     cy.get('[data-cy="faixaFinanciamento-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações da Faixa de Financiamento
+    
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Faixa de Financiamento
     cy.get('[data-cy="faixaFinanciamentoUnsaved.nome"]').type(
-        'Faixa de Financiamento 4', //Preenche o campo "Faixa de Financiamento" com um texto padrão
+        'Faixa de D', //Preenche o campo "Faixa de Financiamento" com um texto padrão
         { delay: 0 },
     ); //Preenche o campo "Faixa de Financiamento" da Faixa de Financiamento
+    cy.get('[data-cy="faixaFinanciamentoUnsaved.valorMaximo"]').click(); //Clica no campo "Valor Máximo" para preenchê-lo
+    cy.get('[data-cy="faixaFinanciamentoUnsaved.valorMaximo"]').type(
+        '2000,00', //Preenche o campo "Valor Máximo" com um valor padrão
+        { delay: 0 },
+    ); //Preenche o campo "Valor Máximo" da Faixa de Financiamento
     cy.get('[data-cy="faixaFinanciamento-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações da Faixa de Financiamento
+    
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Faixa de Financiamento
     cy.get('[data-cy="faixaFinanciamentoUnsaved.nome"]').type(
-        'Faixa de Financiamento 5', //Preenche o campo "Faixa de Financiamento" com um texto padrão
+        'Faixa E', //Preenche o campo "Faixa de Financiamento" com um texto padrão
         { delay: 0 },
     ); //Preenche o campo "Faixa de Financiamento" da Faixa de Financiamento
+    cy.get('[data-cy="faixaFinanciamentoUnsaved.valorMaximo"]').click(); //Clica no campo "Valor Máximo" para preenchê-lo
+    cy.get('[data-cy="faixaFinanciamentoUnsaved.valorMaximo"]').type(
+        '2501,00', //Preenche o campo "Valor Máximo" com um valor padrão
+        { delay: 0 },
+    ); //Preenche o campo "Valor Máximo" da Faixa de Financiamento
     cy.get('[data-cy="faixaFinanciamento-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações da Faixa de Financiamento
 
     cy.get('[data-cy="documentos"]').click(); //Clica na aba Documentos para seguir para a página de Documentos
