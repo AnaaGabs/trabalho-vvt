@@ -347,6 +347,12 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
         .contains('NM R$ 560,00)') // Encontra o item que contém o texto
         .click(); // Clica nele
+    cy.get('[data-cy="bolsaEditalUnsaved.possuiQuantidadeBolsaPorProposta"]').click(); //Marca a opção "Possui Quantidade de Bolsa por Proposta"
+    cy.get('[data-cy="bolsaEditalUnsaved.quantidadeBolsaPorProposta"]').type(
+        '2', //Preenche o campo "Quantidade de Bolsa por Proposta" com um valor padrão
+        { delay: 0 },
+    ); //Preenche o campo "Quantidade de Bolsa por Proposta" da Bolsa
+
     cy.get('[data-cy="bolsaEdital-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações da Bolsa
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Bolsa
     cy.get('[data-cy="bolsaEditalUnsaved.modalidadeBolsaId"]').click(); //clica no campo de seleção de Programa
@@ -357,6 +363,12 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
         .contains('II (0H - R$ 5.220,00)') // Encontra o item que contém o texto
         .click(); // Clica nele
+    cy.get('[data-cy="bolsaEditalUnsaved.possuiQuantidadeBolsaPorProposta"]').click(); //Marca a opção "Possui Quantidade de Bolsa por Proposta"
+    cy.get('[data-cy="bolsaEditalUnsaved.quantidadeBolsaPorProposta"]').type(
+        '2', //Preenche o campo "Quantidade de Bolsa por Proposta" com um valor padrão
+        { delay: 0 },
+    ); //Preenche o campo "Quantidade de Bolsa por Proposta" da Bolsa
+
     cy.get('[data-cy="bolsaEdital-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações da Bolsa
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Bolsa
     cy.get('[data-cy="bolsaEditalUnsaved.modalidadeBolsaId"]').click(); //clica no campo de seleção de Programa
@@ -367,6 +379,12 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
         .contains('B R$ 3.900,00)') // Encontra o item que contém o texto
         .click(); // Clica nele
+    cy.get('[data-cy="bolsaEditalUnsaved.possuiQuantidadeBolsaPorProposta"]').click(); //Marca a opção "Possui Quantidade de Bolsa por Proposta"
+    cy.get('[data-cy="bolsaEditalUnsaved.quantidadeBolsaPorProposta"]').type(
+        '3', //Preenche o campo "Quantidade de Bolsa por Proposta" com um valor padrão
+        { delay: 0 },
+    ); //Preenche o campo "Quantidade de Bolsa por Proposta" da Bolsa    
+    
     cy.get('[data-cy="bolsaEdital-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações da Bolsa
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Bolsa
     cy.get('[data-cy="bolsaEditalUnsaved.modalidadeBolsaId"]').click(); //clica no campo de seleção de Programa
@@ -377,6 +395,12 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
         .contains('C (0H - € 880,00)') // Encontra o item que contém o texto
         .click(); // Clica nele
+    cy.get('[data-cy="bolsaEditalUnsaved.possuiQuantidadeBolsaPorProposta"]').click(); //Marca a opção "Possui Quantidade de Bolsa por Proposta"
+    cy.get('[data-cy="bolsaEditalUnsaved.quantidadeBolsaPorProposta"]').type(
+        '2', //Preenche o campo "Quantidade de Bolsa por Proposta" com um valor padrão
+        { delay: 0 },
+    ); //Preenche o campo "Quantidade de Bolsa por Proposta" da Bolsa
+
     cy.get('[data-cy="bolsaEdital-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações da Bolsa
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Bolsa
     cy.get('[data-cy="bolsaEditalUnsaved.modalidadeBolsaId"]').click(); //clica no campo de seleção de Programa
@@ -387,6 +411,12 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
         .contains('B (0H - R$ 670,00)') // Encontra o item que contém o texto
         .click(); // Clica nele
+    cy.get('[data-cy="bolsaEditalUnsaved.possuiQuantidadeBolsaPorProposta"]').click(); //Marca a opção "Possui Quantidade de Bolsa por Proposta"
+    cy.get('[data-cy="bolsaEditalUnsaved.quantidadeBolsaPorProposta"]').type(
+        '1', //Preenche o campo "Quantidade de Bolsa por Proposta" com um valor padrão
+        { delay: 0 },
+    ); //Preenche o campo "Quantidade de Bolsa por Proposta" da Bolsa
+
     cy.get('[data-cy="bolsaEdital-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações da Bolsa
     
     cy.get('[data-cy="menu-salvar"]').click(); //Clica no botão "Salvar" para salvar as informações do Edital
