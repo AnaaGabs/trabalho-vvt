@@ -37,12 +37,42 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="abrangencia"]').click(); //Clica na aba Abrangência para seguir para a página de Abrangência
     cy.get('[data-cy="estado-todos"]').click(); //Clica em Todos na lista de estados em Abrangência
 
+
     cy.get('[data-cy="informacoes-complementares"]').click(); //Clica na aba Informações Complementares para seguir para a página de Informações Complementares
+
+    cy.get('[data-cy="perguntaInfoId"]').click(); //Clica no campo de seleção de Pergunta Informações Complementares
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+        .contains('Ocupação da equipe técnica durante a realização do evento') // Encontra o item que contém o texto
+        .click(); // Clica nele
     cy.get('[data-cy="informacaoComplementarPergunta-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Informação Complementar
+    
+    cy.get('[data-cy="perguntaInfoId"]').click(); //Clica no campo de seleção de Pergunta Informações Complementares
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+        .contains('ÁREAS TEMÁTICAS - EDITAL DE DESENVOLVIMENTO ESTADUAL - INOVA MAIS/SEBRAE') // Encontra o item que contém o texto
+        .click(); // Clica nele
     cy.get('[data-cy="informacaoComplementarPergunta-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Informação Complementar
+    
+    cy.get('[data-cy="perguntaInfoId"]').click(); //Clica no campo de seleção de Pergunta Informações Complementares
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+        .contains('Porte da Empresa') // Encontra o item que contém o texto
+        .click(); // Clica nele
     cy.get('[data-cy="informacaoComplementarPergunta-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Informação Complementar
+    
+    cy.get('[data-cy="perguntaInfoId"]').click(); //Clica no campo de seleção de Pergunta Informações Complementares
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+        .contains('Objetivos de Desenvolvimento Sustentável') // Encontra o item que contém o texto
+        .click(); // Clica nele
     cy.get('[data-cy="informacaoComplementarPergunta-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Informação Complementar
+    
+    cy.get('[data-cy="perguntaInfoId"]').click(); //Clica no campo de seleção de Pergunta Informações Complementares
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+        .contains('Data de realização do evento') // Encontra o item que contém o texto
+        .click(); // Clica nele
     cy.get('[data-cy="informacaoComplementarPergunta-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Informação Complementar
+
+      // Pergunta para descarte
+    cy.get('[data-cy="informacaoComplementarPergunta-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Pergunta
+    cy.get('[data-cy="informacaoComplementarPergunta--remover"]').click(); //Clica no botão de remover a pergunta bugada
 
     cy.get('[data-cy="cronograma"]').click(); //Clica na aba Cronograma para seguir para a página de Cronograma
     cy.get('[data-cy="periodo-de-submissao"]').click(); //Clica na aba Período de Submissão para seguir para a página de Período de Submissão
