@@ -117,13 +117,57 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="documentos"]').click(); //Clica na aba Documentos para seguir para a página de Documentos
     cy.get('[data-cy="documentos-da-proposta"]').click(); //Clica na aba Documentos da Proposta para seguir para a página de Documentos da Proposta
     cy.get('[data-cy="documentoPropostaEdital-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar um novo Documento de Proposta
+    
+
+    cy.get('.MuiAccordionSummary-root').click(); //Clica no botão de expandir o acordeão para exibir os campos adicionais
+    // Inserir o nome do documento
+    cy.get('[data-cy="documentoPropostaEdital.0.nome"]').click(); //Clica no campo "Nome do Documento" para preenchê-lo
     cy.get('[data-cy="documentoPropostaEdital.0.nome"]').realType(
         'Doc1', //Preenche o campo "Nome do Documento" com um texto padrão
     ); //Preenche o campo "Nome do Documento" do Documento de Proposta
+    // Inserir a descrição do documento
+    cy.get('[data-cy="documentoPropostaEdital.0.descricao"]').click(); //Clica no campo "Descrição do Documento" para preenchê-lo
+    cy.get('[data-cy="documentoPropostaEdital.0.descricao"]').realType(
+        'Descricao do Documento 1', //Preenche o campo "Descrição do Documento" com um texto padrão
+    ); //Preenche o campo "Descrição do Documento" do Documento de Proposta
+    // Inserir o tipo de documento
+    cy.get('[data-cy="documentoPropostaEdital.0.formatoArquivo"]').click(); //Clica no campo de seleção de Tipo de Documento
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+        .contains('CSV') // Encontra o item que contém o texto
+        .click(); // Clica nele
+    // Inserir o tamanho máximo do documento
+    cy.get('[data-cy="documentoPropostaEdital.0.tamanhoArquivo"]').click(); //Clica no campo "Tamanho Máximo do Documento" para preenchê-lo
+    cy.get('[data-cy="documentoPropostaEdital.0.tamanhoArquivo"]').realType(
+        '10', //Preenche o campo "Tamanho Máximo do Documento" com um valor padrão
+    ); //Preenche o campo "Tamanho Máximo do Documento" do Documento de Proposta
+    
+    // Documento 2
     cy.get('[data-cy="documentoPropostaEdital-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar um novo Documento de Proposta
+    
+    cy.get('[data-cy="documentoPropostaEdital--expandable-item"] > .MuiAccordionSummary-root').click(); //Clica no botão de expandir o acordeão para exibir os campos adicionais
+    // Inserir o nome do documento
+    cy.get('[data-cy="documentoPropostaEdital.1.nome"]').click(); //Clica no campo "Nome do Documento" para preenchê-lo
     cy.get('[data-cy="documentoPropostaEdital.1.nome"]').realType(
         'Doc2', //Preenche o campo "Nome do Documento" com um texto padrão
     ); //Preenche o campo "Nome do Documento" do Documento de Proposta
+    // Inserir a descrição do documento
+    cy.get('[data-cy="documentoPropostaEdital.1.descricao"]').click(); //Clica no campo "Descrição do Documento" para preenchê-lo
+    cy.get('[data-cy="documentoPropostaEdital.1.descricao"]').realType(
+        'Descricao do Documento 2', //Preenche o campo "Descrição do Documento" com um texto padrão
+    ); //Preenche o campo "Descrição do Documento" do Documento de Proposta
+    // Inserir o tipo de documento
+    cy.get('[data-cy="documentoPropostaEdital.1.formatoArquivo"]').click(); //Clica no campo de seleção de Tipo de Documento
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+        .contains('CSV') // Encontra o item que contém o texto
+        .click(); // Clica nele
+    // Inserir o tamanho máximo do documento
+    cy.get('[data-cy="documentoPropostaEdital.1.tamanhoArquivo"]').click(); //Clica no campo "Tamanho Máximo do Documento" para preenchê-lo
+    cy.get('[data-cy="documentoPropostaEdital.1.tamanhoArquivo"]').realType(
+        '10', //Preenche o campo "Tamanho Máximo do Documento" com um valor padrão
+    ); //Preenche o campo "Tamanho Máximo do Documento" do Documento de Proposta
+    
+    
+
     cy.get('[data-cy="documentos-pessoais"]').click(); //Clica na aba Documentos Pessoais para seguir para a página de Documentos Pessoais
     cy.get('[data-cy="documentoPessoalEdital-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar um novo Documento Pessoal
     cy.get('[data-cy="documentoPessoalEdital.0.documentoPessoalId"]').click(); //clica no campo de seleção de Programa
