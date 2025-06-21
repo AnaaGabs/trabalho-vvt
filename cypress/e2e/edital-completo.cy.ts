@@ -317,6 +317,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
  
  
     cy.get('[data-cy="indicadores-de-producao"]').click(); //Clica na aba Indicadores do Producao para seguir para a página de Indicadores do Projeto
+    
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar um novo Indicador do Producao
     cy.get('[data-cy="indicadorProducaoUnsaved.id"]').click(); //clica no campo de seleção de Programa
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
@@ -329,6 +330,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
         .contains('Produção Bibliográfica') // Encontra o item que contém o texto
         .click(); // Clica nele
     cy.get('[data-cy="indicadorProducao-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações do Indicador do Producao
+
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar um novo Indicador do Producao
     cy.get('[data-cy="indicadorProducaoUnsaved.id"]').click(); //clica no campo de seleção de Programa
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
@@ -419,7 +421,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
 
     cy.get('[data-cy="bolsaEdital-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações da Bolsa
     
-    cy.get('[data-cy="menu-salvar"]').click(); //Clica no botão "Salvar" para salvar as informações do Edital
+   
     cy.get('[data-cy="menu-finalizar"]').click(); //Clica no botão "Finalizar" para salvar e sair da área de adição do Edital   
     });
 });
