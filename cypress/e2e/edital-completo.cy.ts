@@ -26,14 +26,17 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="pesquisadorSubmeterVariasPropostas"]').check(); //Marca a opção "Pesquisador pode submeter várias propostas"
     cy.get('[data-cy="termo-de-aceite"]').click(); //Clica na aba de Termo de Aceite
     cy.get('.ck-editor__editable', { timeout: 5000 }).should('be.visible'); // Espera o editor carregar
-    cy.get('[data-cy="termoDeAceite"]').realType(
+    cy.get('.ck-placeholder').click(); //Clica no campo "Termo de Aceite" do Edital para preenchê-lo
+    cy.get('.ck-placeholder').realType(
       'Termo de Aceite do Edital Completo', //Preenche o campo "Termo de Aceite" com um texto padrão
       { delay: 0 },
     ); //Preenche o campo "Termo de Aceite" do Edital
 
     cy.get('[data-cy=texto-do-edital]').click(); //Clica na aba Texto do Edital para seguir para a página de Texto do Edital
     cy.get('.ck-editor__editable', { timeout: 5000 }).should('be.visible'); // Espera o editor carregar
-    cy.get('[data-cy="texto"]').realType('Texto do Edital Completo', { delay: 0 }); //Preenche o campo "Texto" do Edital com um texto padrão
+    cy.get('.ck-placeholder').click(); //Clica no campo "texto de edital" do Edital para preenchê-lo
+    cy.get('.ck-placeholder').realType(
+        'Texto do Edital Completo', { delay: 0 }); //Preenche o campo "Texto" do Edital com um texto padrão
     cy.get('[data-cy="abrangencia"]').click(); //Clica na aba Abrangência para seguir para a página de Abrangência
     cy.get('[data-cy="estado-todos"]').click(); //Clica em Todos na lista de estados em Abrangência
 
