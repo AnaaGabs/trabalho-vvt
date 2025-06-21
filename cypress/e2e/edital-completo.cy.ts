@@ -186,48 +186,68 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
         .contains('CPF') // Encontra o item que contém o texto
         .click(); // Clica nele
     cy.get('[data-cy="documentoPessoalEdital-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar um novo Documento Pessoal
-    cy.get('[data-cy="documentoPessoalEdital.0.documentoPessoalId"]').click(); //clica no campo de seleção de Programa
+    cy.get('[data-cy="documentoPessoalEdital.2.documentoPessoalId"]').click(); //clica no campo de seleção de Programa
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
         .contains('Comprovante de Residência') // Encontra o item que contém o texto
         .click(); // Clica nele
     cy.get('[data-cy="documentoPessoalEdital-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar um novo Documento Pessoal
-    cy.get('[data-cy="documentoPessoalEdital.0.documentoPessoalId"]').click(); //clica no campo de seleção de Programa
+    cy.get('[data-cy="documentoPessoalEdital.3.documentoPessoalId"]').click(); //clica no campo de seleção de Programa
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
         .contains('Passaporte') // Encontra o item que contém o texto
         .click(); // Clica nele
     cy.get('[data-cy="documentoPessoalEdital-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar um novo Documento Pessoal
-    cy.get('[data-cy="documentoPessoalEdital.0.documentoPessoalId"]').click(); //clica no campo de seleção de Programa
+    cy.get('[data-cy="documentoPessoalEdital.4.documentoPessoalId"]').click(); //clica no campo de seleção de Programa
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
         .contains('Título de eleitor') // Encontra o item que contém o texto
         .click(); // Clica nele
 
+
+    
     cy.get('[data-cy="perguntas"]').click(); //Clica na aba Perguntas para seguir para a página de Perguntas
     cy.get('[data-cy="descricao-do-projeto"]').click(); //Clica na aba Descrição do Projeto para seguir para a página de Descrição do Projeto
+ 
+    // Selicinar pergutas pré-definidas
+    // Pergunta 1
+    cy.get('[data-cy="perguntaDescId"]').click(); //Clica no campo de seleção de Pergunta Descrição do Projeto
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+        .contains('Objetivo Geral') // Encontra o item que contém o texto
+        .click(); // Clica nele
     cy.get('[data-cy="pergunta-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Pergunta
-    cy.get('[data-cy="pergunta.0.pergunta"]').realType(
-        'Pergunta Descricao do Projeto 1', //Preenche o campo "Pergunta Descricao do Projeto 1" com uma pergunta padrão
-        { delay: 0 },
-    ); //Preenche o campo "Pergunta Descricao do Projeto 1" da Pergunta
+    
+    // Pergunta 2
+    cy.get('[data-cy="perguntaDescId"]').click(); //Clica no campo de seleção de Pergunta Descrição do Projeto
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+        .contains('Resultados Esperados') // Encontra o item que contém o texto
+        .click(); // Clica nele
     cy.get('[data-cy="pergunta-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Pergunta
-    cy.get('[data-cy="pergunta.1.pergunta"]').realType(
-        'Pergunta Descricao do Projeto 2', //Preenche o campo "Pergunta Descricao do Projeto 2" com uma pergunta padrão
-        { delay: 0 },
-    ); //Preenche o campo "Pergunta Descricao do Projeto 2" da Pergunta
+    
+    // Pergunta 3
+    cy.get('[data-cy="perguntaDescId"]').click(); //Clica no campo de seleção de Pergunta Descrição do Projeto
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+        .contains('Impactos Esperados - Científico') // Encontra o item que contém o texto
+        .click(); // Clica nele
     cy.get('[data-cy="pergunta-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Pergunta
-    cy.get('[data-cy="pergunta.2.pergunta"]').realType(
-        'Pergunta Descricao do Projeto 3', //Preenche o campo "Pergunta Descricao do Projeto 3" com uma pergunta padrão
-        { delay: 0 },
-    ); //Preenche o campo "Pergunta Descricao do Projeto 3" da Pergunta
+    
+    // Pergunta 4
+    cy.get('[data-cy="perguntaDescId"]').click(); //Clica no campo de seleção de Pergunta Descrição do Projeto
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+        .contains('Impactos Esperados - Tecnológico') // Encontra o item que contém o texto
+        .click(); // Clica nele
     cy.get('[data-cy="pergunta-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Pergunta
-    cy.get('[data-cy="pergunta.3.pergunta"]').realType(
-        'Pergunta Descricao do Projeto 4', //Preenche o campo "Pergunta Descricao do Projeto 4" com uma pergunta padrão
-        { delay: 0 },
-    ); //Preenche o campo "Pergunta Descricao do Projeto 4" da Pergunta
+    
+    // Pergunta 5
+    cy.get('[data-cy="perguntaDescId"]').click(); //Clica no campo de seleção de Pergunta Descrição do Projeto
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+        .contains('Impactos Esperados - Econômico') // Encontra o item que contém o texto
+        .click(); // Clica nele
     cy.get('[data-cy="pergunta-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Pergunta
-    cy.get('[data-cy="pergunta.4.pergunta"]').realType(
-        'Pergunta Descricao do Projeto 5', //Preenche o campo "Pergunta Descricao do Projeto 5" com uma pergunta padrão
-        { delay: 0 },
-    ); //Preenche o campo "Pergunta Descricao do Projeto 5" da Pergunta
+    
+     // Pergunta para descarte
+    cy.get('[data-cy="pergunta-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Pergunta
+    cy.get('[data-cy="pergunta--remover"]').click(); //Clica no botão de remover a pergunta bugada
+
+ 
+ 
     cy.get('[data-cy="indicadores-de-producao"]').click(); //Clica na aba Indicadores do Producao para seguir para a página de Indicadores do Projeto
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar um novo Indicador do Producao
     cy.get('[data-cy="indicadorProducaoUnsaved.id"]').click(); //clica no campo de seleção de Programa
