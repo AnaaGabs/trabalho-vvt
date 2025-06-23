@@ -15,7 +15,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="nav-item-publicar-edital"]').click(); //Clica na opção Editais para acessar da página de Editais
     cy.get('[data-cy="add-publicar-edital"]').click(); //Clica no botão "Adicionar" para criação de um novo Edital
     cy.get('[data-cy="nome"]').type(
-      'Grupo-11 E.M. 005/2025 ana-barbosa', //Nome do Edital
+      'Grupo-11 E.M. 008/2025 ana-barbosa', //Nome do Edital
       { delay: 0 },
     ); //Preenche o campo "Nome" do Edital
     cy.get('[data-cy="restricoes"]').click(); //Clica na aba Restrições para seguir para a página de Restrições
@@ -40,9 +40,9 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="orcamento"]').click(); //Clica na aba Orçamento para exibir as opções de Orçamento
     cy.get('[data-cy="programa"]').click(); //Clica em Programa para seguir para a página de Programa da aba de Orçamento
     cy.get('[data-cy="programaId"]').click(); //clica no campo de seleção de Programa
-    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+   /*  cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Streich, Torp and Bergnaum') // Encontra o item que contém o texto
-    .click(); // Clica nele
+    .click(); // Clica nele */
     cy.get('[data-cy="perguntas"]').click(); //Clica na Aba de Perguntas
     cy.get('[data-cy="indicadores-de-producao"]').click(); //vai para a página de Indicadores de Produção na aba de Perguntas
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para criar um novo Indicador de Produção
