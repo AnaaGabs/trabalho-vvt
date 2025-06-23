@@ -10,12 +10,12 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
       'Grupo11@sig', // [Senha do usuário]
     ); //Acessa a página de login usando as credenciais do usuário e senha.
   });
-  it.only('Realiza login no sistema e cria um edital médio', () => { //Teste edital médio, se houver mais de um teste, o it.only executa apenas esse teste.
+  it.only('Realiza login no sistema e cria um edital médio', () => { //Teste edital médio
     cy.get('[data-cy="nav-group-edital"]').click(); //Clica na aba Editais
     cy.get('[data-cy="nav-item-publicar-edital"]').click(); //Clica na opção Editais para acessar da página de Editais
     cy.get('[data-cy="add-publicar-edital"]').click(); //Clica no botão "Adicionar" para criação de um novo Edital
     cy.get('[data-cy="nome"]').type(
-      'Grupo-11 E.M. 005/2025 ana-barbosa', //Nome do Edital
+      'Grupo-11 E.M. 007/2025 ana-barbosa', //Nome do Edital
       { delay: 0 },
     ); //Preenche o campo "Nome" do Edital
     cy.get('[data-cy="restricoes"]').click(); //Clica na aba Restrições para seguir para a página de Restrições
