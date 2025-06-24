@@ -13,7 +13,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
   it.only('Realiza login no sistema e submete uma proposta de edital médio', () => { //executa apenas o teste de submissão de proposta médio
     cy.get('[data-cy="breadcrumb-home"]').click(); //Vai para a página inicial
     cy.get('[data-cy="editais-ver-mais"]').click(); //Clica para ver mais editais
-    cy.get('[data-cy="visualizar-edital-grupo-11-e-m-008"]').click(); //Edite essa linha para selecionar o Edital respectivo
+    cy.get('[data-cy="visualizar-edital-grupo-11-e-m-012"]').click(); //Edite essa linha para selecionar o Edital respectivo
 
     cy.wait(300); //Aguarda 300ms para garantir que a página foi carregada completamente
     cy.get('[data-cy="criar-proposta"]').click(); //Clica no botão "Criar Proposta" para iniciar o processo de criação de uma nova proposta
@@ -29,7 +29,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('FACOM/Faculdade de Computação') // Encontra o item que contém o texto
     .click(); // Clica nele
-    cy.get('[data-cy="areaDeConhecimento-adicionar"]').click(); //Clica no botão de adicionar para selecionar Área de Conhecimento
+    //cy.get('[data-cy="areaDeConhecimento-adicionar"]').click(); //Clica no botão de adicionar para selecionar Área de Conhecimento
     cy.get('[data-cy="areaDeConhecimento-area-de-conhecim-expandable-item"]').click();
     cy.get('[data-cy="areaDeConhecimento.0.grandeAreaId"]').click(); //Clica no campo de Grande área"
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
@@ -55,16 +55,14 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Paraná') // Encontra o item que contém o texto
     .click(); // Clica nele
-    cy.get('[data-cy="abrangencia-adicionar"]').click(); //Clica no botão adicionar para selecionar Abrangência
     cy.get('[data-cy="abrangencia.0.abrangenciaMunicipio"]').click(); //Clica no campo para selecionar o município
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Curitiba') // Encontra o item que contém o texto
     .click(); // Clica nele
-    cy.get('[data-cy="abrangencia-adicionar"]').click(); //Clica no botão adicionar para selecionar Abrangência
-    cy.get('[data-cy="abrangencia.0.abrangenciaMunicipio"]').click(); //Clica no campo para selecionar o município
+    /* cy.get('[data-cy="abrangencia.0.abrangenciaMunicipio"]').click(); //Clica no campo para selecionar o município
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Maringá') // Encontra o item que contém o texto
-    .click(); // Clica nele
+    .click(); // Clica nele */
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
     //Dados pessoais
@@ -87,7 +85,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
         '222', //Preenche o campo Bairro
         { delay: 0 },
     )
-    cy.get('[data-cy="menu.salvar"]').click(); //salva as informações do endereço
+    cy.get('[data-cy="menu-salvar"]').click(); //salva as informações do endereço
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
     //Dados acadêmicos
@@ -103,21 +101,21 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Ensino Superior') // Encontra o item que contém o texto
     .click(); // Clica nele
-    cy.get('[data-cy="criadoPor.areaDeConhecimento-adicionar"]').click(); //Clica no botão de adicionar para selecionar Área de Conhecimento
+    //cy.get('[data-cy="criadoPor.areaDeConhecimento-adicionar"]').click(); //Clica no botão de adicionar para selecionar Área de Conhecimento
     cy.get('[data-cy="criadoPor.areaDeConhecimento-area-de-conhecim-expandable-item"]').click();
-    cy.get('[data-cy="criadoPor.areaDeConhecimento.0.grandeAreaId"]').click(); //Clica no campo de Grande área"
+    cy.get('[data-cy="criadoPor.areaDeConhecimento.0.grandeAreaId"]').click(); //Clica no campo de Grande área
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Ciências Exatas e da Terra') // Encontra o item que contém o texto
     .click(); // Clica nele
-    cy.get('[data-cy="criadoPor.areaDeConhecimento.0.areaId"]').click(); //Clica no campo de Indicador de Produção"
+    cy.get('[data-cy="criadoPor.areaDeConhecimento.0.areaId"]').click(); //Clica no campo de Área de Conhecimento
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Ciência da Computação') // Encontra o item que contém o texto
     .click(); // Clica nele
-    cy.get('[data-cy="criadoPor..0.subAreaId"]').click(); //Clica no campo de Indicador de Produção"
+    cy.get('[data-cy="criadoPor.0.subAreaId"]').click(); //Clica no campo de sub área de conhecimento
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Sistemas de Computação') // Encontra o item que contém o texto
     .click(); // Clica nele
-    cy.get('[data-cy="criadoPor.areaDeConhecimento.0.especialidadeId"]').click(); //Clica no campo de Indicador de Produção"
+    cy.get('[data-cy="criadoPor.areaDeConhecimento.0.especialidadeId"]').click(); //Clica no campo de especialidade
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Software Básico') // Encontra o item que contém o texto
     .click(); // Clica nele
@@ -144,7 +142,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     //Atividades
     cy.get('[data-cy="propostaAtividade-adicionar"]').click(); //Clica no botão de adicionar para selecionar Atividades
     cy.get('[data-cy="propostaAtividade.0.titulo"]').type(
-        'Teste de Proposta - Edital Médio', //Preenche o campo "Título do Projeto" com o valor "Submissão de Proposta de Teste"
+        'Teste de Proposta - Edital Médio', //Preenche o campo "Título da proposta" com o valor "Teste de Proposta - Edital Médio"
         { delay: 0 },
     )
     cy.get('[data-cy="propostaAtividade.0.mesInicio"]').click(); //clica no campo de mês de início
