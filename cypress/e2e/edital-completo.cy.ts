@@ -334,7 +334,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para adicionar um novo Indicador do Producao
     cy.get('[data-cy="indicadorProducaoUnsaved.id"]').click(); //clica no campo de seleção de Programa
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
-        .contains('Teste') // Encontra o item que contém o texto
+        .contains('Produção Técnica ou Tecnológica') // Encontra o item que contém o texto
         .click(); // Clica nele
     cy.get('[data-cy="indicadorProducao-confirmar"]').click(); //Clica no botão "Confirmar" para salvar as informações do Indicador do Producao
 
