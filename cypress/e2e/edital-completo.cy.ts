@@ -11,7 +11,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     ); //Acessa a página de login usando as credenciais do usuário e senha.
   });
 
-  it.only('Realiza login no sistema e cria um edital completo', () => { //Teste edital completo, se houver mais de um teste, o it.only executa apenas esse teste.
+  it('Realiza login no sistema e cria um edital completo', () => { //Teste edital completo, se houver mais de um teste, o it.only executa apenas esse teste.
     cy.get('[data-cy="nav-group-edital"]').click(); //Clica na aba Editais
     cy.get('[data-cy="nav-item-publicar-edital"]').click(); //Clica na opção Editais para acessar da página de Editais
     cy.get('[data-cy="add-publicar-edital"]').click(); //Clica no botão "Adicionar" para criação de um novo Edital
