@@ -3,6 +3,9 @@ import 'cypress-iframe';
 import 'cypress-real-events';
 import "cypress-real-events/support";
 
+import 'cypress-iframe';
+import 'cypress-real-events';
+
 Cypress.Commands.add('typelogin', (url, username, password) => {
   cy.visit(url);
   cy.get('#login').type(username);
