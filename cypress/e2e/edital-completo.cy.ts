@@ -1,4 +1,5 @@
 import { getCurrentDateTime } from '../helpers/date.helper';
+import { EDITAL_ID, getEditalFullName } from '../config/edital.config';
 
 describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', () => {
   beforeEach(() => {
@@ -16,9 +17,12 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="nav-item-publicar-edital"]').click(); //Clica na opção Editais para acessar da página de Editais
     cy.get('[data-cy="add-publicar-edital"]').click(); //Clica no botão "Adicionar" para criação de um novo Edital
     cy.get('[data-cy="nome"]').type(
-      'Grupo-11 E.M. 005/2025 aline-hirokawa', //Edite essa linha para preencher o nome do Edital
+      getEditalFullName(), // Usa o nome do edital da configuração centralizada
       { delay: 0 },
     ); //Preenche o campo "Nome" do Edital
+    
+    // Log para facilitar a identificação do ID usado no teste
+    cy.log(`Criando edital com ID: ${EDITAL_ID}`);
 
     cy.get('[data-cy="restricoes"]').click(); //Clica na aba Restrições para seguir para a página de Restrições
     cy.get('[data-cy="definirDuracaoProjetoEmMeses"]').check(); //Marca a opção "Definir Duração do Projeto em Meses"
