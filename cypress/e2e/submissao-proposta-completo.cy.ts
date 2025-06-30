@@ -10,14 +10,14 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
       'Grupo11@sig', // [Senha do usuário]
     ); //Acessa a página de login usando as credenciais do usuário e senha.
   });
-  it.only('Realiza login no sistema e submete uma proposta de edital médio', () => { //executa apenas o teste de submissão de proposta médio
+  it.only('Realiza login no sistema e submete uma proposta de edital completocy', () => { //executa apenas o teste de submissão de proposta médio
     cy.get('[data-cy="breadcrumb-home"]').click(); //Vai para a página inicial
     cy.get('[data-cy="editais-ver-mais"]').click(); //Clica para ver mais editais
     cy.get('[data-cy="visualizar-edital-grupo-11-e-m-012"]').click(); //Edite essa linha para selecionar o Edital respectivo
 
     cy.wait(300); //Aguarda 300ms para garantir que a página foi carregada completamente
-    cy.get('[data-cy="criar-proposta"]').click(); //Clica no botão "Criar Proposta" para iniciar o processo de criação de uma nova proposta
-    cy.get('[data-cy="tituloDoProjeto"]').type(
+    cy.get('[data-cy="criar-proposta"]').should('be.visible').click(); //Clica no botão "Criar Proposta" para iniciar o processo de criação de uma nova proposta
+    cy.get('[data-cy="tituloDoProjeto"]').should('be.visible').type(
         'Submissão de Proposta - Edital Médio', //Preenche o campo "Título do Projeto" com o valor "Submissão de Proposta de Teste"
         { delay: 0 },
     )
