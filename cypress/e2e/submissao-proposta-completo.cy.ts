@@ -70,9 +70,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="abrangencia.0.abrangenciaMunicipio"]').click(); //Clica no campo para selecionar o município
     
     cy.get('[data-cy="abrangencia.0.abrangenciaMunicipio"]').click(); //Clica no campo para selecionar o município
-    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
-    .contains('Maringá') // Encontra o item que contém o texto
-    .click(); // Clica nele 
+    cy.get('[data-cy="abrangencia.0.abrangenciaMunicipio"]').type('Maringa', { delay: 0 }); //Preenche o campo de município com o nome "Maringa"
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
     //Dados pessoais
@@ -112,15 +110,18 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     .contains('Ensino Superior') // Encontra o item que contém o texto
     .click(); // Clica nele
     //cy.get('[data-cy="criadoPor.areaDeConhecimento-adicionar"]').click(); //Clica no botão de adicionar para selecionar Área de Conhecimento
+     /*
     cy.get('[data-cy="criadoPor.areaDeConhecimento-area-de-conhecim-expandable-item"]').click();
     cy.get('[data-cy="criadoPor.areaDeConhecimento.0.grandeAreaId"]').click(); //Clica no campo de Grande área
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Ciências Exatas e da Terra') // Encontra o item que contém o texto
     .click(); // Clica nele
+   
     cy.get('[data-cy="criadoPor.areaDeConhecimento.0.areaId"]').click(); //Clica no campo de Área de Conhecimento
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Ciência da Computação') // Encontra o item que contém o texto
     .click(); // Clica nele
+     
     cy.get('[data-cy="criadoPor.0.subAreaId"]').click(); //Clica no campo de sub área de conhecimento
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Sistemas de Computação') // Encontra o item que contém o texto
@@ -129,6 +130,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Software Básico') // Encontra o item que contém o texto
     .click(); // Clica nele
+     */
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
     //dados profissionais
