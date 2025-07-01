@@ -86,7 +86,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para criar um novo Período de Submissão
     cy.get('[data-cy="chamadaUnsaved.inicio"]').type(getCurrentDateTime()); //Preenche o campo "Início" do Período de Submissão com a data do dia de hoje
     cy.get('[data-cy="chamadaUnsaved.termino"]').type(
-      getCurrentDateTime({ addYears: 1 }),
+      getCurrentDateTime({ addMonths: 2 }),
     ); //Preenche o campo "Término" do Período de Submissão com a data do dia de hoje + 1 ano
     cy.get('[data-cy="chamada-confirmar"]').click(); //Clica no botão "Salvar" para salvar as informações do Período de Submissão
 
