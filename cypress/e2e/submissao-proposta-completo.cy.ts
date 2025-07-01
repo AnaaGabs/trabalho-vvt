@@ -55,6 +55,12 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     .click(); // Clica nele
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
+    //Informações complementares
+    cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-27"]').click(); //Clica no campo de pergunta 27
+    cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-27"]').type("Esta é uma proposta de teste para o edital completo.", { delay: 0 }); //Preenche o campo de pergunta 27 com um texto de exemplo
+
+
+    cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
     //Abrangência
     cy.get('[data-cy="abrangencia-adicionar"]').click(); //Clica no botão adicionar para selecionar Abrangência
     cy.get('[data-cy="abrangencia.0.estadoId"]').click(); //Clica no campo para selecionar o Estado
@@ -62,13 +68,11 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     .contains('Paraná') // Encontra o item que contém o texto
     .click(); // Clica nele
     cy.get('[data-cy="abrangencia.0.abrangenciaMunicipio"]').click(); //Clica no campo para selecionar o município
-    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
-    .contains('Curitiba') // Encontra o item que contém o texto
-    .click(); // Clica nele
-    /* cy.get('[data-cy="abrangencia.0.abrangenciaMunicipio"]').click(); //Clica no campo para selecionar o município
+    
+    cy.get('[data-cy="abrangencia.0.abrangenciaMunicipio"]').click(); //Clica no campo para selecionar o município
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Maringá') // Encontra o item que contém o texto
-    .click(); // Clica nele */
+    .click(); // Clica nele 
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
     //Dados pessoais
