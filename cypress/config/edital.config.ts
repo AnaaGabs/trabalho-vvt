@@ -32,11 +32,4 @@ export function getEditalFullName(): string {
   return `Grupo-11 E.M. ${EDITAL_ID}/2025 ${NAME_EXECUTOR}`;
 }
 
-/**
- * Gera o seletor data-cy para visualizar o edital
- * 
- * @returns Seletor data-cy completo
- */
-export function getEditalSelector(): string {
-  return `[data-cy="visualizar-edital-grupo-11-e-m-${EDITAL_ID}"]`;
-}
+
