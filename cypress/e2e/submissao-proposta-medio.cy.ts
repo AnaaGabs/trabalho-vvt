@@ -1,5 +1,5 @@
 import { getCurrentDateTime } from '../helpers/date.helper';
-import { EDITAL_ID, getEditalSelector } from '../config/edital.config';
+import { EDITAL_ID, getEditalFullName } from '../config/edital.config';
 
 describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', () => {
   beforeEach(() => {
@@ -14,8 +14,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
   it.only('Realiza login no sistema e submete uma proposta de edital médio', () => { //executa apenas o teste de submissão de proposta médio
     cy.get('[data-cy="breadcrumb-home"]').click(); //Vai para a página inicial
     cy.get('[data-cy="editais-ver-mais"]').click(); //Clica para ver mais editais
-    cy.get(getEditalSelector()).click(); // Usa o seletor da configuração centralizada para encontrar o edital
-    
+    cy.get('[data-cy="visualizar-edital-grupo-11-e-m-012"]').click(); //Edite essa linha para selecionar o Edital respectivo 
     // Log para facilitar a identificação do ID usado no teste
     cy.log(`Buscando edital com ID: ${EDITAL_ID}`);
 
