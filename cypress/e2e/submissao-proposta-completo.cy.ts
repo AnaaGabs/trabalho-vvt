@@ -1,5 +1,5 @@
 import { getCurrentDateTime } from '../helpers/date.helper';
-import { EDITAL_ID, getEditalSelector } from '../config/edital.config';
+import { EDITAL_ID, getEditalFullName } from '../config/edital.config';
 
 describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', () => {
   beforeEach(() => {
@@ -14,10 +14,12 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
   it.only('Realiza login no sistema e submete uma proposta de edital completocy', () => { //executa apenas o teste de submissão de proposta médio
     cy.get('[data-cy="breadcrumb-home"]').click(); //Vai para a página inicial
     cy.get('[data-cy="editais-ver-mais"]').click(); //Clica para ver mais editais
-    cy.get(getEditalSelector()).click(); // Usa o seletor da configuração centralizada para encontrar o edital
-    
+
+    cy.get('.MuiPaper-root').click(); // Usa o seletor da configuração centralizada para encontrar o edital
+    cy.get('.MuiPaper-root').type(getEditalFullName()); // Digita o seletor do edital para garantir que o Cypress encontre o elemento correto
     // Log para facilitar a identificação do ID usado no teste
     cy.log(`Buscando edital com ID: ${EDITAL_ID}`);
+    cy.get('.e1w0rc4q2 > .MuiButtonBase-root').click(); //Clica no botão para ver o edital específico
 
     cy.wait(300); //Aguarda 300ms para garantir que a página foi carregada completamente
     cy.get('[data-cy="criar-proposta"]').should('be.visible').click(); //Clica no botão "Criar Proposta" para iniciar o processo de criação de uma nova proposta
