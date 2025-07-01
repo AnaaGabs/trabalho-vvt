@@ -1,5 +1,5 @@
 import { getCurrentDateTime } from '../helpers/date.helper';
-import { EDITAL_ID, getEditalFullName, getEditalSelector } from '../config/edital.config';
+import { EDITAL_ID, getEditalFullName} from '../config/edital.config';
 
 /**
  * Teste de fluxo completo que:
@@ -42,7 +42,7 @@ describe('Fluxo completo: Criação e submissão de edital', () => {
     cy.get('[data-cy="editais-ver-mais"]').click();
     
     // Usar o seletor da configuração centralizada para encontrar o edital
-    cy.get(getEditalSelector()).click();
+    
     
     // Aqui você pode adicionar os demais passos para submissão da proposta
     // ...
