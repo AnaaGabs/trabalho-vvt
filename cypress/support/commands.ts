@@ -1,4 +1,7 @@
 // cypress/support/commands.ts
+import 'cypress-iframe';
+import 'cypress-real-events';
+import "cypress-real-events/support";
 
 import 'cypress-iframe';
 import 'cypress-real-events';
