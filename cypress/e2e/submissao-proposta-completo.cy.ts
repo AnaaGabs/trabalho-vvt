@@ -24,7 +24,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.wait(300); //Aguarda 300ms para garantir que a página foi carregada completamente
     cy.get('[data-cy="criar-proposta"]').should('be.visible').click(); //Clica no botão "Criar Proposta" para iniciar o processo de criação de uma nova proposta
     cy.get('[data-cy="tituloDoProjeto"]').should('be.visible').type(
-        'Submissão de Proposta - Edital Médio', //Preenche o campo "Título do Projeto" com o valor "Submissão de Proposta de Teste"
+        'Submissão de Proposta - Edital Completo', //Preenche o campo "Título do Projeto" com o valor "Submissão de Proposta de Teste"
         { delay: 0 },
     )
     cy.get('[data-cy="instituicaoExecutoraId"]').click(); //Clica no campo de instituição Executora
@@ -35,7 +35,8 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('FACOM/Faculdade de Computação') // Encontra o item que contém o texto
     .click(); // Clica nele
-    //cy.get('[data-cy="areaDeConhecimento-adicionar"]').click(); //Clica no botão de adicionar para selecionar Área de Conhecimento
+    /*
+    // cy.get('[data-cy="areaDeConhecimento-adicionar"]').click(); //Clica no botão de adicionar para selecionar Área de Conhecimento
     cy.get('[data-cy="areaDeConhecimento-area-de-conhecim-expandable-item"]').click();
     cy.get('[data-cy="areaDeConhecimento.0.grandeAreaId"]').click(); //Clica no campo de Grande área"
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
@@ -53,8 +54,9 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Software Básico') // Encontra o item que contém o texto
     .click(); // Clica nele
+    */
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
-
+    
     //Informações complementares
     cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-27"]').click(); //Clica no campo de pergunta 27
     cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-27"]').type("Esta é uma proposta de teste para o edital completo.", { delay: 0 }); //Preenche o campo de pergunta 27 com um texto de exemplo
@@ -142,14 +144,52 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     .click(); // Clica nele
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
+    // Apresentação ********
+    //Descricao
+    cy.get('[data-cy="formularioPropostaDescritiva.pergunta-5"]').click(); //Clica no campo de pergunta 5
+    cy.get('[data-cy="formularioPropostaDescritiva.pergunta-5"]').type(
+        'Texto para teste.', //Preenche o campo de pergunta com um texto de exemplo
+        { delay: 0 },
+    )
+    cy.get('[data-cy="formularioPropostaDescritiva.pergunta-9"]').click(); //Clica no campo de pergunta 9
+    cy.get('[data-cy="formularioPropostaDescritiva.pergunta-9"]').type(
+        'Texto para teste.', //Preenche o campo de pergunta com um texto de exemplo
+        { delay: 0 },
+    )
+  
+    cy.get('[data-cy="formularioPropostaDescritiva.pergunta-11"]').click(); //Clica no campo de pergunta 5
+    cy.get('[data-cy="formularioPropostaDescritiva.pergunta-11"]').type(
+        'Texto para teste.', //Preenche o campo de pergunta com um texto de exemplo
+        { delay: 0 },
+    )
+    cy.get('[data-cy="formularioPropostaDescritiva.pergunta-12"]').click(); //Clica no campo de pergunta 9
+    cy.get('[data-cy="formularioPropostaDescritiva.pergunta-12"]').type(
+        'Texto para teste.', //Preenche o campo de pergunta com um texto de exemplo
+        { delay: 0 },
+    )
+    cy.get('[data-cy="formularioPropostaDescritiva.pergunta-13"]').click(); //Clica no campo de pergunta 9
+    cy.get('[data-cy="formularioPropostaDescritiva.pergunta-13"]').type(
+        'Texto para teste.', //Preenche o campo de pergunta com um texto de exemplo
+        { delay: 0 },
+    )
+    cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
     //indicadores de produção
-    cy.get('.mui-156', { timeout: 5000 }).should('be.visible'); // Espera o editor carregar
-    cy.get('.mui-156').clear().realType('1', { delay: 0 }); // Insere o texto com realType
-    cy.get('.mui-186', { timeout: 5000 }).should('be.visible'); // Espera o editor carregar
-    cy.get('.mui-186').clear().realType('1', { delay: 0 }); // Insere o texto com realType
-    cy.get('.mui-190', { timeout: 5000 }).should('be.visible'); // Espera o editor carregar
-    cy.get('.mui-190').clear().realType('1', { delay: 0 }); // Insere o texto com realType
+    cy.get('#mui-80'); // Espera o editor carregar
+    cy.get('#mui-80').clear().realType('1', { delay: 0 }); // Insere o texto com realType
+    cy.get('#mui-85'); // Espera o editor carregar
+    cy.get('#mui-85').clear().realType('1', { delay: 0 }); // Insere o texto com realType
+    cy.get('#mui-86'); // Espera o editor carregar
+    cy.get('#mui-86').clear().realType('1', { delay: 0 }); // Insere o texto com realType
+   
+    cy.get('#mui-91'); // Espera o editor carregar
+    cy.get('#mui-91').clear().realType('1', { delay: 0 }); // Insere o texto com realType
+    cy.get('#mui-92'); // Espera o editor carregar
+    cy.get('#mui-92').clear().realType('1', { delay: 0 }); // Insere o texto com realType
+   
+    cy.get('#mui-119'); // Espera o editor carregar
+    cy.get('#mui-119').clear().realType('1', { delay: 0 }); // Insere o texto com realType
+   
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
@@ -171,7 +211,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('20 horas') // Encontra o item que contém o texto
     .click(); // Clica nele
-    cy.get('[data-cy="propostaAtividade.0.membroRespondavelId"]').click(); //clica no campo de resposável
+    cy.get('[data-cy="propostaAtividade.0.membroResponsavelId"]').click(); //clica no campo de resposável
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Grupo 11 Pesquisador') // Encontra o item que contém o texto
     .click(); // Clica nele
