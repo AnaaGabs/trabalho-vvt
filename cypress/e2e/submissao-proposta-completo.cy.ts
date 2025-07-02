@@ -231,12 +231,52 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
 
-   
+    // Bolsa
+    /**
+     *  Não é possivel preencher o campo valor total
+     * 
+    cy.get('[data-cy="add-bolsas"]').click(); //Clica no botão de adicionar para selecionar Bolsa
+    cy.get('[data-cy="rubricaBolsaUnsaved.modalidadeBolsaId"]')
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+    .contains('AT')
+    .click(); // Clica nele
+    cy.get('[data-cy="rubricaBolsaUnsaved.nivelBolsaId"]').click(); //Clica no campo de nível de bolsa
+    cy.get('ul[role="listbox"] li') // Seleciona todos os
+    .first() // Seleciona o primeiro item da lista de opções (listbox)
+    .click(); // Clica nele
+    cy.get('[data-cy="rubricaBolsaUnsaved.quantidade"]').click(); //Clica no campo de quantidade
+    cy.get('[data-cy="rubricaBolsaUnsaved.quantidade"]').type('1', { delay: 0 }); //Preenche o campo de quantidade com o valor 1
+    cy.get('[data-cy="rubricaBolsaUnsaved.duracao"]').click(); //Clica no campo de duração
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+    .first() // Seleciona o primeiro item da lista de opções (listbox)
+    .click(); // Clica nele
+    
+    /**
+     * Não é possivel preencher o valor total
+    cy.get('[data-cy="rubricaBolsaUnsaved.valorTotal"]').click(); //Clica no campo de valor total
+    cy.get('[data-cy="rubricaBolsaUnsaved.valorTotal"]').type('1000', { delay: 0 }); //Preenche o campo de valor total com o valor 1000
+      
+   */
 
+    cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
+    // consolidacao
+    cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
+    // Solicitacao a fundacao
+    cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
+    
+    //Anexos
+    // Documentos pessoais
+    cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
+    // Documentos da proposta
+    cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
 
     //termo de aceite
-    cy.get('[data-cy="termoDeAceiteAceito-boolean"]').check();
+    cy.get('[data-cy="termoDeAceiteAceito"]').check(); //Clica no checkbox de aceite do termo de aceite
+
+
+    cy.get('[data-cy="menu-verificar-penden"]').click(); //Clica no botão de verificar pendências para verificar se há pendências na proposta
+
     });
 });
