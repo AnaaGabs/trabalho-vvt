@@ -194,6 +194,9 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
     //Atividades
+    /**
+    * Não possui responsaveis para selecionar, por isso não é possível preencher os campos de atividade
+    
     cy.get('[data-cy="propostaAtividade-adicionar"]').click(); //Clica no botão de adicionar para selecionar Atividades
     cy.get('[data-cy="propostaAtividade.0.titulo"]').type(
         'Teste de Proposta - Edital Médio', //Preenche o campo "Título da proposta" com o valor "Teste de Proposta - Edital Médio"
@@ -216,6 +219,22 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     .contains('Grupo 11 Pesquisador') // Encontra o item que contém o texto
     .click(); // Clica nele
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
+    */
+    
+    //Orçamento
+    cy.get('[data-cy="orcamento"]').click(); //Clica no botão de Orçamento
+    cy.get('[data-cy="faixa-de-financiamento"]').click(); //Clica no botão de faixa de financiamento 
+    cy.get('[data-cy="faixaFinanciamentoId"]').click(); //Clica no campo de faixa de financiamento
+    cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
+    .contains('Faixa A') // Encontra o item que contém o texto
+    .click(); // Clica nele
+    cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
+
+
+   
+
+
+
 
     //termo de aceite
     cy.get('[data-cy="termoDeAceiteAceito-boolean"]').check();
