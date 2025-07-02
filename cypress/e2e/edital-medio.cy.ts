@@ -16,12 +16,13 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="nav-item-publicar-edital"]').click(); //Clica na opção Editais para acessar da página de Editais
     cy.get('[data-cy="add-publicar-edital"]').click(); //Clica no botão "Adicionar" para criação de um novo Edital
     cy.get('[data-cy="nome"]').type(
-      'Grupo-11 E.M. 021/2025 ana-barbosa', //Nome do Edital
+      'Grupo-11 E.M. 024/2025 ana-barbosa', //Nome do Edital
       { delay: 0 },
     ); //Preenche o campo "Nome" do Edital
     cy.get('[data-cy="restricoes"]').click(); //Clica na aba Restrições para seguir para a página de Restrições
     cy.get('[data-cy="definirDuracaoProjetoEmMeses"]').check(); //Marca a opção "Definir Duração do Projeto em Meses"
     cy.get('[data-cy="duracaoProjetoEmMeses"]').type('6'); //Preenche o campo "Duração do Projeto em Meses com o valor 6"
+    cy.get('[data-cy="pesquisadorSubmeterVariasPropostas"]').check(); //Marca a opção "Definir Valor Máximo de Apoio"
     cy.get('[data-cy="termo-de-aceite"]').click(); //Clica na aba de Termo de Aceite
     cy.get('[data-cy="termoDeAceite"]').click().realType('Texto do termo de aceite - Grupo 11', { delay: 0 },); //Clica no campo de Termo de Aceite
 
@@ -35,7 +36,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="add-button"]').click(); //Clica no botão "Adicionar" para criar um novo Período de Submissão
     cy.get('[data-cy="chamadaUnsaved.inicio"]').type(getCurrentDateTime()); //Preenche o campo "Início" do Período de Submissão com a data do dia de hoje
     cy.get('[data-cy="chamadaUnsaved.termino"]').type(
-      getCurrentDateTime({ addYears: 1 }),
+      getCurrentDateTime({ addMonths: 1 }),
     ); //Preenche o campo "Término" do Período de Submissão com a data do dia de hoje + 1 ano
     cy.get('[data-cy="chamada-confirmar"]').click(); //Clica no botão "Salvar" para salvar as informações do Período de Submissão
     cy.get('[data-cy="orcamento"]').click(); //Clica na aba Orçamento para exibir as opções de Orçamento
