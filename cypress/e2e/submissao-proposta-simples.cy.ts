@@ -28,7 +28,6 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     )
     //Atividade 3 - Faça a continuidade do teste, preenchendo os campos obrigatórios da proposta.
 
-    //cy.get('[data-cy="areaDeConhecimento-adicionar"]').click(); //Clica no botao Adicionar de seleção de Área de Conhecimento
     cy.get('[data-cy-index="areaDeConhecimento-0-expandable-item"]').click(); //Clica na área de conhecimento expandida para selecionar a primeira opção
     cy.get('[data-cy="areaDeConhecimento.0.grandeAreaId"]').click(); //Clica no campo de seleção de Grande Área de Conhecimento
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
@@ -39,17 +38,13 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
       .contains('Engenharia Civil') // Encontra o item que contém o texto
       .click(); // Clica nele
 
-    //cy.get('[data-cy="abrangencia"]').click(); //Clica no campo de seleção de Abrangência
-    //cy.get('[data-cy="abrangencia-adicionar"]').click(); //Clica no botão "Adicionar" para adicionar uma nova Abrangência
-
+    
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para avançar para a próxima etapa do formulário de proposta
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para avançar para a próxima etapa do formulário de proposta
 
     cy.get('[data-cy="criadoPor.documento"]').type('700.535.010-39'); //Preenche o campo "CPF" com um número fictício
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para avançar para a próxima etapa do formulário de proposta
 
-    //cy.get('[data-cy="criadoPor.endereco.cep"]').type('79002-052'); //Preenche o campo "CEP" com um número fictício
-    //cy.get('[data-cy="criadoPor.endereco.numero"]').type('123'); //Preenche o campo "Número" com um número fictício
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para avançar para a próxima etapa do formulário de proposta
 
     cy.get('[data-cy="criadoPor.instituicaoId"]').click(); //Clica no campo de seleção de Instituição
@@ -79,7 +74,6 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para avançar para a próxima etapa do formulário de proposta
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para avançar para a próxima etapa do formulário de proposta
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para avançar para a próxima etapa do formulário de proposta
-    //cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para avançar para a próxima etapa do formulário de proposta
 
     cy.get('[data-cy="termoDeAceiteAceito"]').check(); //Marca a caixa de seleção "Termo de Aceite Aceito" para aceitar os termos e condições
     cy.get('[data-cy="menu-salvar"]').click(); //Clica no botão "Salvar" para salvar as informações da proposta
