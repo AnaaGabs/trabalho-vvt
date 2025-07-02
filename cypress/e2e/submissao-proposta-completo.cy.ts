@@ -19,7 +19,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('.MuiPaper-root').type(getEditalFullName()); // Digita o seletor do edital para garantir que o Cypress encontre o elemento correto
     // Log para facilitar a identificação do ID usado no teste
     cy.log(`Buscando edital com ID: ${EDITAL_ID}`);
-    cy.get('.e1w0rc4q2 > .MuiButtonBase-root').click(); //Clica no botão para ver o edital específico
+    cy.get('.e1w0rc4q2 > .MuiButtonBase-root').first().click(); //Clica no botão para ver o edital específico
 
     cy.wait(300); //Aguarda 300ms para garantir que a página foi carregada completamente
     cy.get('[data-cy="criar-proposta"]').should('be.visible').click(); //Clica no botão "Criar Proposta" para iniciar o processo de criação de uma nova proposta
@@ -134,12 +134,14 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
     //dados profissionais
-    cy.get('[data-cy="criadoPor.possuiVinculoInstitucional-boolean"]').check(); //seleciona o campo "Possuo Vínculo Institucional"
-    cy.get('[data-cy="criadoPor.possuiVinculoInstitucional.tipoVinculoInstitucionalId"]').click();
+    cy.get('[data-cy="dados-profissionais"]').click(); //Clica no botão de adicionar para selecionar Dados Profissionais
+    cy.get('[data-cy="criadoPor.possuiVinculoInstitucional"]').check(); //seleciona o campo "Possuo Vínculo Institucional"
+    cy.get('[data-cy="criadoPor.vinculoInstitucional.tipoVinculoInstitucionalId"]').click();
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('Bolsista') // Encontra o item que contém o texto
     .click(); // Clica nele
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
+
 
     //indicadores de produção
     cy.get('.mui-156', { timeout: 5000 }).should('be.visible'); // Espera o editor carregar
