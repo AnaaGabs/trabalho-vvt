@@ -127,6 +127,6 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="termoDeAceiteAceito"]').check();
     cy.get('[data-cy="menu-salvar"]').click(); //salva as informações do endereço
     cy.get('[data-cy="menu-verificar-penden"]').click(); //Verifica as pendências da proposta
-    cy.get('.ex40wuf2 > .MuiButtonBase-root').click(); //Clica no botão "Finalizar" para salvar e sair da área de submissão da proposta
+    cy.get('.ex40wuf2 > .MuiButtonBase-root').click(); //Submete a proposta
     });
 });
