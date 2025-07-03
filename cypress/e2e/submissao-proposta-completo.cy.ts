@@ -1,5 +1,6 @@
-import { getCurrentDateTime, formatDateToDDMMYYYY } from '../helpers/date.helper';
+import { getCurrentDateTime, getDateDDMMYYYY } from '../helpers/date.helper';
 import { EDITAL_ID, getEditalFullName } from '../config/edital.config';
+import 'cypress-file-upload';
 
 describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', () => {
   beforeEach(() => {
@@ -286,6 +287,12 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     
     //Anexos
     // Documentos pessoais
+    cy.get('[data-cy="anexos"]').click();
+    cy.get('[data-cy="documentos-pessoais"]').click();
+    cy.get('#select-categories').click();
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-item-rg"]').click();
+    cy.get('input[type="file"]').attachFile("..\..\files_test\teste.pdf");
+    
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
     // Documentos da proposta
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa

@@ -2,9 +2,7 @@
 import 'cypress-iframe';
 import 'cypress-real-events';
 import "cypress-real-events/support";
-
-import 'cypress-iframe';
-import 'cypress-real-events';
+import 'cypress-file-upload';
 
 Cypress.Commands.add('typelogin', (url, username, password) => {
   cy.visit(url);
