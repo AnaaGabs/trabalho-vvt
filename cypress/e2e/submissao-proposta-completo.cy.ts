@@ -288,9 +288,29 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     //Anexos
     // Documentos pessoais
     cy.get('[data-cy="anexos"]').click();
+    //RG
     cy.get('#select-categories').click(); //Clica no campo de seleção de Categorias
     cy.get('[data-cy="documentoPessoalPropostaAnexo-item-rg"]').click(); //Clica no campo de seleção de Documento Pessoal (RG)        
-    
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-procure"]').click(); //Clica no botão "Procurar" para selecionar um arquivo
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-procure"]').selectFile('cypress/fixtures/teste.pdf');
+    //Cpf
+    cy.get('#select-categories').click(); //Clica no campo de seleção de Categorias
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-item-cpf"]').click(); //Clica no campo de seleção de Documento Pessoal (RG)        
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-procure"]').click(); //Clica no botão "Procurar" para selecionar um arquivo
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-procure"]').selectFile('cypress/fixtures/teste.pdf');
+    //Comprovante de Residência
+    cy.get('#select-categories').click(); //Clica no campo de seleção de Categorias
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-item-comprovante-de-r"]').click(); //Clica no campo de seleção de Documento Pessoal (RG)        
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-procure"]').click(); //Clica no botão "Procurar" para selecionar um arquivo
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-procure"]').selectFile('cypress/fixtures/teste.pdf');
+    // Passaporte
+    cy.get('#select-categories').click(); //Clica no campo de seleção de Categorias
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-item-passaporte"]').click(); //Clica no campo de seleção de Documento Pessoal (RG)        
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-procure"]').click(); //Clica no botão "Procurar" para selecionar um arquivo
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-procure"]').selectFile('cypress/fixtures/teste.pdf');
+    //Titulo de Eleitor
+    cy.get('#select-categories').click(); //Clica no campo de seleção de Categorias
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-item-titulo-de-eleito"]').click(); //Clica no campo de seleção de Documento Pessoal (RG)        
     cy.get('[data-cy="documentoPessoalPropostaAnexo-procure"]').click(); //Clica no botão "Procurar" para selecionar um arquivo
     cy.get('[data-cy="documentoPessoalPropostaAnexo-procure"]').selectFile('cypress/fixtures/teste.pdf');
 
