@@ -316,8 +316,19 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
 
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
     // Documentos da proposta
-    cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
+    // Doc1
+    cy.get('#select-categories').click(); //Clica no campo de seleção de Categorias
+    cy.get('[data-cy="documentoPropostaAnexo-item-doc1"]').click(); //Clica no campo de seleção de Documento da Proposta (Doc1)
 
+    cy.get('.document-uploader').selectFile('cypress/fixtures/teste.csv', { action: 'drag-drop' }); //Clica no botão "Procurar" para selecionar um arquivo
+
+    // Doc2
+    cy.get('#select-categories').click(); //Clica no campo de seleção de Categorias
+    cy.get('[data-cy="documentoPropostaAnexo-item-doc2"]').click(); //Clica no campo de seleção de Documento da Proposta (Doc1)
+
+    cy.get('.document-uploader').selectFile('cypress/fixtures/teste.csv', { action: 'drag-drop' }); //Clica no botão "Procurar" para selecionar um arquivo
+    cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
+ 
 
     //termo de aceite
     cy.get('[data-cy="termoDeAceiteAceito"]').check(); //Clica no checkbox de aceite do termo de aceite
