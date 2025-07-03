@@ -1,4 +1,4 @@
-import { getCurrentDateTime } from '../helpers/date.helper';
+import { getCurrentDateTime, formatDateToDDMMYYYY } from '../helpers/date.helper';
 import { EDITAL_ID, getEditalFullName } from '../config/edital.config';
 
 describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', () => {
@@ -61,6 +61,23 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-27"]').click(); //Clica no campo de pergunta 27
     cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-27"]').type("Esta é uma proposta de teste para o edital completo.", { delay: 0 }); //Preenche o campo de pergunta 27 com um texto de exemplo
 
+    cy.wait(300); //Aguarda 300ms para garantir que a página foi carregada completamente
+    //cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-25-item-smart-city"]').check(); //Marca a opção "Smart City" na pergunta 25
+    cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-25-item-smart-city"] > .MuiButtonBase-root > .PrivateSwitchBase-input').click(); //Marca a opção "Smart City" na pergunta 25    
+
+    
+    //cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-24-item-mei-faturamento"]').check(); //Marca a opção "MEI - Faturamento" na pergunta 24
+    cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-24-item-mei-faturamento"] > .MuiListItemIcon-root > .MuiButtonBase-root > .PrivateSwitchBase-input').click(); //Marca a opção "MEI - Faturamento" na pergunta 24    
+
+    //cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-23-item-ods04-garantir-o"]').check(); //Marca a opção "ODS04 - Garantir o acesso à educação inclusiva, equitativa e de qualidade" na pergunta 23
+    cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-23-item-ods04-garantir-o"] > .MuiListItemIcon-root > .MuiButtonBase-root > .PrivateSwitchBase-input').click(); //Marca a opção "ODS04 - Garantir o acesso à educação inclusiva, equitativa e de qualidade" na pergunta 23   
+      
+    
+       //data
+    cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-26"]').type(
+      formatDateToDDMMYYYY(getCurrentDateTime({addDays: 14})),
+      { delay: 0 }
+    ); //Preenche o campo de pergunta 26 com a data atual formatada DDMMYYYY
 
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
     //Abrangência
