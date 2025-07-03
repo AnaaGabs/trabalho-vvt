@@ -325,5 +325,12 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
 
     cy.get('[data-cy="menu-verificar-penden"]').click(); //Clica no botão de verificar pendências para verificar se há pendências na proposta
 
+
+    cy.get('[data-cy="caracterizacao"]').click(); //Clica no botão de Caracterização para verificar se há pendências na proposta
+    cy.get('[data-cy="informacoes-complementares"]').click(); //Clica no botão de Informações Complementares para verificar se há pendências na proposta
+    cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-25-item-smart-city"] > .MuiButtonBase-root > .PrivateSwitchBase-input').click(); //Marca a opção "Smart City" na pergunta 25    
+
+    cy.get('[data-cy="menu-verificar-penden"]').click(); //Clica no botão de verificar pendências novamente para verificar se há pendências na proposta
+    
     });
 });
