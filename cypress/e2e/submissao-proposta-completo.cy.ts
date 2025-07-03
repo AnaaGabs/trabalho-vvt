@@ -75,11 +75,13 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     
        //data
     cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-26"]').type(
-      formatDateToDDMMYYYY(getCurrentDateTime({addDays: 14})),
+      getDateDDMMYYYY({addDays: 14}),
       { delay: 0 }
-    ); //Preenche o campo de pergunta 26 com a data atual formatada DDMMYYYY
+    ); //Preenche o campo de pergunta 26 com a data atual formatada DDMMYYYY (ex: 16072025)
 
-    cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
+    //cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
+    cy.get('[data-cy="abrangencia"]').click(); //Clica no botão de Abrangência para expandir a seção    
+    
     //Abrangência
     cy.get('[data-cy="abrangencia-adicionar"]').click(); //Clica no botão adicionar para selecionar Abrangência
     cy.get('[data-cy="abrangencia.0.estadoId"]').click(); //Clica no campo para selecionar o Estado
