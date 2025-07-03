@@ -59,7 +59,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
     
     //Informações complementares
-    cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-27"]').click(); //Clica no campo de pergunta 27
+    cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-27"]').should('be.visible').click(); //Clica no campo de pergunta 27
     cy.get('[data-cy="formularioPropostaInformacaoComplementar.pergunta-27"]').type("Esta é uma proposta de teste para o edital completo.", { delay: 0 }); //Preenche o campo de pergunta 27 com um texto de exemplo
 
     cy.wait(300); //Aguarda 300ms para garantir que a página foi carregada completamente
@@ -246,17 +246,15 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="faixa-de-financiamento"]').click(); //Clica no botão de faixa de financiamento 
     cy.get('[data-cy="faixaFinanciamentoId"]').click(); //Clica no campo de faixa de financiamento
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
-    .contains('Faixa A') // Encontra o item que contém o texto
+    .contains('Faixa B') // Encontra o item que contém o texto
     .click(); // Clica nele
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
 
 
     // Bolsa
-    /**
-     *  Não é possivel preencher o campo valor total
-     * 
+ 
     cy.get('[data-cy="add-bolsas"]').click(); //Clica no botão de adicionar para selecionar Bolsa
-    cy.get('[data-cy="rubricaBolsaUnsaved.modalidadeBolsaId"]')
+    cy.get('[data-cy="rubricaBolsaUnsaved.modalidadeBolsaId"]').click(); //Clica no campo de modalidade de bolsa
     cy.get('ul[role="listbox"] li') // Seleciona todos os itens da lista de opções (listbox)
     .contains('AT')
     .click(); // Clica nele
