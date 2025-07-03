@@ -288,11 +288,12 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     //Anexos
     // Documentos pessoais
     cy.get('[data-cy="anexos"]').click();
-    cy.get('[data-cy="documentos-pessoais"]').click();
-    cy.get('#select-categories').click();
-    cy.get('[data-cy="documentoPessoalPropostaAnexo-item-rg"]').click();
-    cy.get('input[type="file"]').attachFile("..\..\files_test\teste.pdf");
+    cy.get('#select-categories').click(); //Clica no campo de seleção de Categorias
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-item-rg"]').click(); //Clica no campo de seleção de Documento Pessoal (RG)        
     
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-procure"]').click(); //Clica no botão "Procurar" para selecionar um arquivo
+    cy.get('[data-cy="documentoPessoalPropostaAnexo-procure"]').selectFile('cypress/fixtures/teste.pdf');
+
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
     // Documentos da proposta
     cy.get('[data-cy="next-button"]').click(); //Clica no botão "Próximo" para ir para a próxima etapa
